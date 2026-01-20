@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     siteName: "Haeun Kim's Blog",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/blog-og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Haeun Kim's Blog",
+      },
+    ],
   },
   robots: {
     index: true,

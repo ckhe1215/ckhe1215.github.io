@@ -45,6 +45,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime,
       authors: ["Haeun Kim"],
       tags: post.frontmatter.tags,
+      images: [
+        {
+          url: "/blog-og-image.png",
+          width: 1200,
+          height: 630,
+          alt: post.frontmatter.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
