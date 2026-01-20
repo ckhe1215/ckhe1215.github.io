@@ -4,7 +4,7 @@ import { Github, Linkedin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="border-t mt-auto">
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 py-6 max-w-5xl">
         <div className="flex items-center justify-center gap-6">
           <Link
             href="https://github.com/ckhe1215"

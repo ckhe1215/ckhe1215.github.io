@@ -35,7 +35,7 @@ export default async function TagPage({ params }: Props) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 max-w-5xl">
       <Link href="/">
         <Button variant="ghost" className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" />
@@ -55,7 +55,7 @@ export default async function TagPage({ params }: Props) {
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6">
         {posts.map((post) => (
           <PostCard key={post.slug} post={post} />
         ))}
