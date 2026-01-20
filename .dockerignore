@@ -1,0 +1,38 @@
+# Git
+.git
+.gitignore
+
+# CI/CD & Infrastructure
+k8s
+.github
+argocd-app.yml
+
+# Documentation
+README.md
+CLAUDE.md
+messages
+
+# Build outputs
+.next
+out
+dist
+build
+
+# Dependencies
+node_modules
+
+# Development
+.env*.local
+*.log
+npm-debug.log*
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
