@@ -1,13 +1,14 @@
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import { getPostBySlug, getPostSlugs } from "@/lib/posts";
-import { markdownToHtml } from "@/lib/markdown";
+import { Comments } from "@/components/Comments";
 import { PostContent } from "@/components/PostContent";
 import { TagBadge } from "@/components/TagBadge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { markdownToHtml } from "@/lib/markdown";
+import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -48,7 +49,7 @@ export default async function PostPage({ params }: Props) {
       <Link href="/">
         <Button variant="ghost" className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" />
-          뒤로가기
+          Back
         </Button>
       </Link>
 
@@ -73,6 +74,13 @@ export default async function PostPage({ params }: Props) {
 
         <PostContent content={content} />
       </article>
+
+      <Separator className="my-8" />
+
+      <section className="mt-8">
+        <h2 className="text-2xl font-bold mb-6">Comments</h2>
+        <Comments />
+      </section>
     </div>
   );
 }

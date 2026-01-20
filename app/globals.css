@@ -254,3 +254,13 @@ html:not(.dark) .shiki span {
   color: var(--shiki-light) !important;
   background-color: transparent !important;
 }
+
+/* Giscus styling */
+.giscus,
+.giscus-frame {
+  width: 100%;
+}
+
+.giscus-frame {
+  border: none;
+}
