@@ -21,7 +21,27 @@ export const metadata: Metadata = {
     default: "Blog | Haeun Kim",
     template: "%s | Blog",
   },
-  description: "개발과 기술에 대한 이야기를 나눕니다.",
+  description: "Frontend Developer Haeun Kim's Blog",
+  metadataBase: new URL("https://ckhe1215.github.io"),
+  openGraph: {
+    title: "Blog | Haeun Kim",
+    description: "Frontend Developer Haeun Kim's Blog",
+    url: "https://ckhe1215.github.io",
+    siteName: "Haeun Kim's Blog",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -30,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >

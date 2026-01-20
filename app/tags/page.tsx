@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Tags",
-  description: "모든 태그 목록입니다.",
+  description: "Browse all tags.",
 };
 
 export default function TagsPage() {
@@ -15,7 +15,9 @@ export default function TagsPage() {
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Tags</h1>
-        <p className="text-muted-foreground">{tags.length}개의 태그</p>
+        <p className="text-muted-foreground">
+          {tags.length} {tags.length === 1 ? "tag" : "tags"}
+        </p>
       </div>
 
       <div className="flex flex-wrap gap-3">
@@ -36,7 +38,7 @@ export default function TagsPage() {
 
       {tags.length === 0 && (
         <p className="text-center text-muted-foreground py-12">
-          아직 태그가 없습니다.
+          No tags yet.
         </p>
       )}
     </div>

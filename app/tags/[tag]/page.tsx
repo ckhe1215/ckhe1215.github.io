@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const decodedTag = decodeURIComponent(tag);
 
   return {
-    title: `#${decodedTag} 태그의 포스트`,
-    description: `${decodedTag} 태그가 붙은 포스트 목록입니다.`,
+    title: `Posts tagged with #${decodedTag}`,
+    description: `Posts tagged with ${decodedTag}.`,
   };
 }
 
@@ -39,18 +39,20 @@ export default async function TagPage({ params }: Props) {
       <Link href="/">
         <Button variant="ghost" className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" />
-          뒤로가기
+          Back
         </Button>
       </Link>
 
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-2">
-          <h1 className="text-3xl font-bold">태그:</h1>
+          <h1 className="text-3xl font-bold">Tag:</h1>
           <Badge variant="secondary" className="text-lg px-3 py-1">
             {decodedTag}
           </Badge>
         </div>
-        <p className="text-muted-foreground">{posts.length}개의 포스트</p>
+        <p className="text-muted-foreground">
+          {posts.length} {posts.length === 1 ? "post" : "posts"}
+        </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">

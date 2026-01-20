@@ -9,7 +9,7 @@ export default function Home() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Blog</h1>
         <p className="text-muted-foreground">
-          {posts.length}개의 포스트
+          {posts.length} {posts.length === 1 ? "post" : "posts"}
         </p>
       </div>
 
@@ -21,7 +21,7 @@ export default function Home() {
 
       {posts.length === 0 && (
         <p className="text-center text-muted-foreground py-12">
-          아직 작성된 포스트가 없습니다.
+          No posts yet.
         </p>
       )}
     </div>

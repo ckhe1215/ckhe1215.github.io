@@ -24,13 +24,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!post) {
     return {
-      title: "포스트를 찾을 수 없습니다",
+      title: "Post Not Found",
     };
   }
+
+  const publishedTime = new Date(post.frontmatter.date).toISOString();
+  const url = `https://ckhe1215.github.io/${slug}`;
 
   return {
     title: post.frontmatter.title,
     description: post.frontmatter.description,
+    authors: [{ name: "Haeun Kim" }],
+    openGraph: {
+      title: post.frontmatter.title,
+      description: post.frontmatter.description,
+      url,
+      siteName: "Haeun Kim's Blog",
+      locale: "en_US",
+      type: "article",
+      publishedTime,
+      authors: ["Haeun Kim"],
+      tags: post.frontmatter.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.frontmatter.title,
+      description: post.frontmatter.description,
+      creator: "@ckhe1215",
+    },
   };
 }
 
@@ -57,7 +78,7 @@ export default async function PostPage({ params }: Props) {
         <header className="mb-8">
           <h1 className="text-4xl font-bold mb-4">{post.frontmatter.title}</h1>
           <time className="text-muted-foreground">
-            {new Date(post.frontmatter.date).toLocaleDateString("ko-KR", {
+            {new Date(post.frontmatter.date).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
               day: "numeric",

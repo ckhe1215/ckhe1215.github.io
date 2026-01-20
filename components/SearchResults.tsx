@@ -31,17 +31,17 @@ export function SearchResults({ posts }: SearchResultsProps) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-2">검색 결과</h1>
+      <h1 className="text-3xl font-bold mb-2">Search Results</h1>
       {query && (
         <p className="text-muted-foreground mb-8">
-          &quot;{query}&quot;에 대한 검색 결과 {results.length}건
+          {results.length} {results.length === 1 ? "result" : "results"} for &quot;{query}&quot;
         </p>
       )}
 
       {!query ? (
-        <p className="text-muted-foreground">검색어를 입력해주세요.</p>
+        <p className="text-muted-foreground">Please enter a search term.</p>
       ) : results.length === 0 ? (
-        <p className="text-muted-foreground">검색 결과가 없습니다.</p>
+        <p className="text-muted-foreground">No results found.</p>
       ) : (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((post) => (
