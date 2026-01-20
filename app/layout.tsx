@@ -1,8 +1,9 @@
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,6 +34,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F1E8H16P0V"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-F1E8H16P0V');
+          `}
+        </Script>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
