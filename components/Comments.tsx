@@ -1,10 +1,8 @@
 "use client";
 
-import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 
 export function Comments() {
-  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -24,13 +22,9 @@ export function Comments() {
       !repo ||
       !repoId ||
       !category ||
-      !categoryId ||
-      !resolvedTheme
+      !categoryId
     )
       return;
-
-    // Use specific GitHub themes for better compatibility
-    const giscusTheme = resolvedTheme === "dark" ? "dark_dimmed" : "light";
 
     // Clear existing content
     ref.current.innerHTML = "";
@@ -47,14 +41,14 @@ export function Comments() {
     script.setAttribute("data-reactions-enabled", "1");
     script.setAttribute("data-emit-metadata", "0");
     script.setAttribute("data-input-position", "bottom");
-    script.setAttribute("data-theme", giscusTheme);
+    script.setAttribute("data-theme", "light");
     script.setAttribute("data-lang", "en");
     script.setAttribute("data-loading", "lazy");
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
 
     ref.current.appendChild(script);
-  }, [mounted, resolvedTheme, repo, repoId, category, categoryId]);
+  }, [mounted, repo, repoId, category, categoryId]);
 
   if (!mounted) {
     return <div className="h-32 rounded-lg bg-muted/50 animate-pulse" />;
