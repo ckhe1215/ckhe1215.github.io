@@ -28,7 +28,7 @@ export function PostCard({ post }: PostCardProps) {
 
   return (
     <Link href={`/${post.slug}`}>
-      <Card className="hover:shadow-lg transition-shadow cursor-pointer h-[220px] flex flex-col">
+      <Card className="hover:shadow-lg hover:border-primary/50 transition-all cursor-pointer">
         <CardHeader>
           <CardTitle className="hover:text-primary transition-colors line-clamp-2">
             {post.frontmatter.title}
@@ -41,12 +41,12 @@ export function PostCard({ post }: PostCardProps) {
             })}
           </CardDescription>
         </CardHeader>
-        <CardContent className="flex-1">
+        <CardContent>
           <p className="text-muted-foreground line-clamp-2">
             {post.frontmatter.description}
           </p>
         </CardContent>
-        <CardFooter className="flex gap-2 flex-wrap mt-auto">
+        <CardFooter className="flex gap-2 flex-wrap">
           {post.frontmatter.tags.map((tag) => (
             <span key={tag} onClick={(e) => handleTagClick(e, tag)}>
               <TagBadge tag={tag} asLink={false} />
