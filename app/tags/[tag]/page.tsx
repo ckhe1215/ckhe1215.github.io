@@ -1,15 +1,17 @@
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import { getAllTags, getPostsByTag } from "@/lib/posts";
 import { PostCard } from "@/components/PostCard";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { getAllTags, getPostsByTag } from "@/lib/posts";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: Promise<{ tag: string }>;
 }
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return getAllTags().map((tag) => ({ tag }));
