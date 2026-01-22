@@ -38,6 +38,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  other: {
+    "google-site-verification": "XYkWMjvjE7cYV8BYD6I1VAlJOYKLjANnlw_ORGNTtsc",
+  },
 };
 
 export default function RootLayout({
