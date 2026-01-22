@@ -18,13 +18,13 @@ export function SearchBox() {
 
   return (
     <form onSubmit={handleSubmit} className="relative">
-      <Search className="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
       <Input
         type="search"
         placeholder="Search..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="pl-8 w-40 md:w-60"
+        className="pl-9 w-40 md:w-60"
       />
     </form>
   );

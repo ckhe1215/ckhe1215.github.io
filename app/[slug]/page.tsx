@@ -82,10 +82,10 @@ export default async function PostPage({ params }: Props) {
         </Button>
       </Link>
 
-      <article>
+      <article className="bg-card rounded-xl p-8 border-2">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">{post.frontmatter.title}</h1>
-          <time className="text-muted-foreground">
+          <h1 className="text-4xl font-bold mb-4 leading-snug">{post.frontmatter.title}</h1>
+          <time className="text-muted-foreground text-sm">
             {new Date(post.frontmatter.date).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
@@ -106,8 +106,11 @@ export default async function PostPage({ params }: Props) {
 
       <Separator className="my-8" />
 
-      <section className="mt-8">
-        <h2 className="text-2xl font-bold mb-6">Comments</h2>
+      <section className="mt-8 bg-card rounded-xl p-8 border-2">
+        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+          <span>Comments</span>
+          <span className="text-xl">💬</span>
+        </h2>
         <Comments />
       </section>
     </div>

@@ -10,7 +10,7 @@ export function TagBadge({ tag, asLink = true }: TagBadgeProps) {
   const badge = (
     <Badge
       variant="secondary"
-      className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+      className="hover:bg-primary hover:text-primary-foreground transition-all duration-200 cursor-pointer rounded-lg px-3 py-1 text-xs font-medium"
     >
       {tag}
     </Badge>

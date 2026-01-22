@@ -7,7 +7,10 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Blog</h1>
+        <h1 className="text-3xl font-bold mb-3 flex items-center gap-2">
+          <span>Blog</span>
+          <span className="text-2xl">✨</span>
+        </h1>
         <p className="text-muted-foreground">
           {posts.length} {posts.length === 1 ? "post" : "posts"}
         </p>

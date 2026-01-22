@@ -14,7 +14,10 @@ export default function TagsPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Tags</h1>
+        <h1 className="text-3xl font-bold mb-3 flex items-center gap-2">
+          <span>Tags</span>
+          <span className="text-2xl">🏷️</span>
+        </h1>
         <p className="text-muted-foreground">
           {tags.length} {tags.length === 1 ? "tag" : "tags"}
         </p>
@@ -27,7 +30,7 @@ export default function TagsPage() {
             <Link key={tag} href={`/tags/${tag}`}>
               <Badge
                 variant="secondary"
-                className="text-base px-4 py-2 hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="text-base px-5 py-2.5 hover:bg-primary hover:text-primary-foreground transition-all duration-200 rounded-lg hover:scale-105"
               >
                 {tag} ({count})
               </Badge>

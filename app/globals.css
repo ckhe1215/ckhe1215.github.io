@@ -42,9 +42,9 @@
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.625rem;
   /* Warm pretzel theme - Light mode */
-  --background: #fdfaf5;
+  --background: #fefdf9;
   --foreground: #4a3426;
   --card: #ffffff;
   --card-foreground: #4a3426;
@@ -59,8 +59,8 @@
   --accent: #fbbf24;
   --accent-foreground: #4a3426;
   --destructive: #dc2626;
-  --border: #e8dcc8;
-  --input: #e8dcc8;
+  --border: #f5ddc4;
+  --input: #f5ddc4;
   --ring: #f59e0b;
   --chart-1: #f59e0b;
   --chart-2: #fbbf24;
